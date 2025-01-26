@@ -1,5 +1,7 @@
 location / {
 	root /usr/share/nginx/html;
+  try_files $uri $uri/ /index.html;
+    
 	index index.html;
 	add_header Cache-Control no-cache;
 	${NO_AUTH_COOKIE_HEADER}
