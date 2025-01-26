@@ -18,7 +18,7 @@ RUN echo "export default '${BASE_DIR}';" > ./src/version.ts
 # 执行构建并重组输出目录结构
 RUN npm run build && \
     mkdir -p "./build/${BASE_DIR}" && \
-    mv ./build/{js,css} "./build/${BASE_DIR}/"
+    mv ./build/js ./build/css "./build/${BASE_DIR}/"
 
 # 第二阶段：使用优化后的Nginx镜像
 FROM alibaba-cloud-linux-3-registry.cn-hangzhou.cr.aliyuncs.com/alinux3/nginx_optimized
